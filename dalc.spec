@@ -2,7 +2,7 @@ Summary:	A powerful scientific DAL calculator
 Summary(pl):	Zaawansowany kalkulator naukowy
 Name:		dalc
 Version:	0.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Math
 Group(de):	Applikationen/Mathematik
@@ -27,11 +27,12 @@ Dalc ma du¿e mo¿liwo¶ci, jednocze¶nie bêd±c ³atwym w u¿yciu.
 %patch0 -p1
 
 %build
-automake -a -c
-autoheader
+rm -f missing
+libtoolize --copy --force
 aclocal
 autoconf
-libtoolize --copy --force
+autoheader
+automake -a -c
 %configure
 %{__make}
 
