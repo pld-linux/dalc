@@ -6,6 +6,7 @@ Release:	4
 License:	GPL
 Group:		Applications/Math
 Source0:	http://linuxberg.iol.it/files/console/scientific/%{name}-%{version}.tgz
+# Source0-md5:	7720fdddbab2b72932fa58b139bc5be5
 Source1:	%{name}.desktop
 Patch0:		%{name}-ac_am.patch
 BuildRequires:	autoconf
