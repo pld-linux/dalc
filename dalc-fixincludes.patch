@@ -1,0 +1,24 @@
+diff -U 3 dalc-0.1/dalc.C dalc-0.1-p/dalc.C
+--- dalc-0.1/dalc.C	Thu Dec  9 08:01:35 1999
++++ dalc-0.1-p/dalc.C	Thu Nov 23 23:02:40 2000
+@@ -21,7 +21,7 @@
+ #include <ncurses.h>
+ #include <menu.h>
+ #include <stdio.h>
+-#include <strings.h>
++#include <string.h>
+ #include <ctype.h>
+ #include <unistd.h>
+ #include <stdlib.h>
+diff -U 3 dalc-0.1/dalexpr.C dalc-0.1-p/dalexpr.C
+--- dalc-0.1/dalexpr.C	Thu Dec  9 08:17:05 1999
++++ dalc-0.1-p/dalexpr.C	Thu Nov 23 23:02:47 2000
+@@ -21,7 +21,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+-#include <strings.h>
++#include <string.h>
+ #include <math.h>
+ #include <time.h>
+ #include "dalexpr.h"
