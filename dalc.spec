@@ -8,7 +8,11 @@ Group:		Applications/Math
 Group(de):	Applikationen/Mathematik
 Group(pl):	Aplikacje/Matematyczne
 Source0:	http://linuxberg.iol.it/files/console/scientific/%{name}-%{version}.tgz
-Patch0:		%{name}-fixincludes.patch
+Patch0:		%{name}-ac_am.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
+BuildRequires:	libstdc++-devel
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -23,22 +27,23 @@ Dalc ma du¿e mo¿liwo¶ci, jednocze¶nie bêd±c ³atwym w u¿yciu.
 %patch0 -p1
 
 %build
-%{__make} CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g} \
-	-DVIEWER=\\\"xv\\\" -DCONVERTER=\\\"ppmtogif\\\" -I%{_includedir}/ncurses" \
+automake -a -c
+autoheader
+aclocal
+autoconf
+libtoolize --copy --force
+%configure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir}}
-
 %{__make} install \
-        BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-        MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
