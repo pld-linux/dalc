@@ -10,7 +10,6 @@ Group(pl):	Aplikacje/Matematyczne
 Source0:	http://linuxberg.iol.it/files/console/scientific/%{name}-%{version}.tgz
 Patch0:		%{name}-fixincludes.patch
 BuildRequires:	ncurses-devel
-BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
