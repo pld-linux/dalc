@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Dalc
+Comment=Advanced scientific calculator
+Comment[pl]=Zaawansowany kalkulator naukowy
+Icon=
+Exec=dalc
+Terminal=1
+Type=Application
+# vi: encoding=utf-8
