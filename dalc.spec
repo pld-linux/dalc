@@ -13,7 +13,10 @@ BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		__cxx		%{__cc}
+%define		_gcc_ver	%(%{__cc} -dumpversion | cut -b 1)
+%if %{_gcc_ver} == 2
+%define		__cxx		"%{__cc}"
+%endif
 
 %description
 Dalc is designed to be both powerful and easy to use at the same time.
