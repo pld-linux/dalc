@@ -5,9 +5,10 @@ Version:	0.1
 Release:	1
 License:	GPL
 Group:		Applications/Math
+Group(de):	Applikationen/Mathematik
 Group(pl):	Aplikacje/Matematyczne
-Source:		http://linuxberg.iol.it/files/console/scientific/%{name}-%{version}.tgz
-Patch0:		dalc-fixincludes.patch
+Source0:	http://linuxberg.iol.it/files/console/scientific/%{name}-%{version}.tgz
+Patch0:		%{name}-fixincludes.patch
 BuildRequires:	ncurses-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -23,14 +24,14 @@ Dalc ma du¿e mo¿liwo¶ci, jednocze¶nie bêd±c ³atwym w u¿yciu.
 %patch0 -p1
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS -DVIEWER=\\\"xv\\\" -DCONVERTER=\\\"ppmtogif\\\" -I/usr/include/ncurses" \
-	LDFLAGS="-L/usr/X11R6/lib -s" \
+%{__make} CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g} \
+	-DVIEWER=\\\"xv\\\" -DCONVERTER=\\\"ppmtogif\\\" -I%{_includedir}/ncurses" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_mandir}/man1
-install -d $RPM_BUILD_ROOT/%{_bindir}
-make install \
+install -d $RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir}}
+
+%{__make} install \
         BINDIR=$RPM_BUILD_ROOT%{_bindir} \
         MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
