@@ -2,19 +2,31 @@ Summary:	A powerful scientific DAL calculator
 Summary(pl):	Zaawansowany kalkulator naukowy
 Name:		dalc
 Version:	0.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Math
+Group(cs):	Aplikace/Matematické
+Group(da):	Programmer/Matematik
 Group(de):	Applikationen/Mathematik
+Group(es):	Aplicaciones/Matemáticas
+Group(fr):	Applications/Mathématiques
+Group(it):	Applicazioni/Matematiche
+Group(no):	Applikasjoner/Matematiske
 Group(pl):	Aplikacje/Matematyczne
+Group(pt):	Aplicações/Matemática
+Group(ru):	ğÒÉÌÏÖÅÎÉÑ/íÁÔÅÍÁÔÉŞÅÓËÉÅ
+Group(sl):	Programi/Matematièni
+Group(sv):	Tillämpningar/Matemataisk
+Group(uk):	ğÒÉËÌÁÄÎ¦ ğÒÏÇÒÁÍÉ/íÁÔÅÍÁÔÉËÁ
 Source0:	http://linuxberg.iol.it/files/console/scientific/%{name}-%{version}.tgz
 Patch0:		%{name}-ac_am.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	libstdc++-devel
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		__cxx		%{__cc}
 
 %description
 Dalc is designed to be both powerful and easy to use at the same time.
