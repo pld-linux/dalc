@@ -2,10 +2,11 @@ Summary:	A powerful scientific DAL calculator
 Summary(pl):	Zaawansowany kalkulator naukowy
 Name:		dalc
 Version:	0.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Math
 Source0:	http://linuxberg.iol.it/files/console/scientific/%{name}-%{version}.tgz
+Source1:	%{name}.desktop
 Patch0:		%{name}-ac_am.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -42,6 +43,9 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Numerics/%{name}.desktop
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,3 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
+%{_applnkdir}/Scientific/Numerics/*
