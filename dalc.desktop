@@ -7,4 +7,5 @@ Icon=
 Exec=dalc
 Terminal=true
 Type=Application
+Categories=ConsoleOnly;Utility;Calculator;
 # vi: encoding=utf-8
