@@ -1,8 +1,11 @@
+# TODO: 
+# - find homepage 
+# - update to 1.5 (i can't find source, only binaries!)
 Summary:	A powerful scientific DAL calculator
 Summary(pl):	Zaawansowany kalkulator naukowy
 Name:		dalc
 Version:	0.1
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Math
 Source0:	http://linuxberg.iol.it/files/console/scientific/%{name}-%{version}.tgz
@@ -12,7 +15,7 @@ Patch0:		%{name}-ac_am.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	ncurses-devel
+BuildRequires:	ncurses-ext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gcc_ver	%(%{__cc} -dumpversion | cut -b 1)
