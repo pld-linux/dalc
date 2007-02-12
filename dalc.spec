@@ -2,7 +2,7 @@
 # - find homepage 
 # - update to 1.5 (i can't find source, only binaries!)
 Summary:	A powerful scientific DAL calculator
-Summary(pl.UTF-8):   Zaawansowany kalkulator naukowy
+Summary(pl.UTF-8):	Zaawansowany kalkulator naukowy
 Name:		dalc
 Version:	0.1
 Release:	6
