@@ -2,7 +2,7 @@
 # - find homepage 
 # - update to 1.5 (i can't find source, only binaries!)
 Summary:	A powerful scientific DAL calculator
-Summary(pl):	Zaawansowany kalkulator naukowy
+Summary(pl.UTF-8):   Zaawansowany kalkulator naukowy
 Name:		dalc
 Version:	0.1
 Release:	6
@@ -27,8 +27,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Dalc is designed to be both powerful and easy to use at the same time.
 
-%description -l pl
-Dalc ma duøe moøliwo∂ci, jednocze∂nie bÍd±c ≥atwym w uøyciu.
+%description -l pl.UTF-8
+Dalc ma du≈ºe mo≈ºliwo≈õci, jednocze≈õnie bƒôdƒÖc ≈Çatwym w u≈ºyciu.
 
 %prep
 %setup -q
